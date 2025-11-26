@@ -71,7 +71,7 @@ const CREW = [
   { id: "C6", name: "Sarah Wilson", rank: "First Officer" },
 ];
 
-export const FLIGHTS = [
+ const FLIGHTS = [
   {
     id: "F101",
     flightNo: "GX101",
