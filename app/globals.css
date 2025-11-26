@@ -1,0 +1,722 @@
+/* ---------- THEME COLORS ---------- */
+:root {
+  --navy-900: #071a2a;
+  --navy-800: #08314f;
+  --navy-700: #0b3c61;
+  --navy-600: #0e4a76;
+  --navy-500: #0f5c8a;
+  --muted: #64748b;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- HEADER ---------- */
+header {
+  background: linear-gradient(90deg, var(--navy-800), var(--navy-700));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 4px 12px rgba(7, 26, 42, 0.1);
+}
+.header-inner {
+  /* max-width: 1280px; */
+  margin: 0 auto;
+}
+
+/* ---------- Page container (tighter) ---------- */
+main {
+  max-width: 1280px;
+  margin: 18px auto;
+  padding: 12px;
+}
+
+/* ---------- Card style ---------- */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(6px);
+  border-radius: 12px;
+  box-shadow: 0 8px 22px rgba(13, 30, 45, 0.08);
+  border: 1px solid rgba(15, 23, 42, 0.04);
+}
+
+/* ---------- Filters ---------- */
+.filters-grid > * {
+  min-width: 0;
+}
+
+/* Inputs & selects */
+input[type="date"],
+select {
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  padding: 10px 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(12, 36, 62, 0.03) inset;
+  font-size: 0.93rem;
+  color: #0f1724;
+  transition: all 0.2s ease;
+}
+input[type="date"]:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(11, 92, 231, 0.08);
+  border-color: var(--navy-500);
+}
+
+/* Primary button */
+.btn-primary {
+  background: linear-gradient(180deg, var(--navy-600) 0%, var(--navy-700) 100%);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  box-shadow: 0 8px 18px rgba(11, 92, 231, 0.12);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 12px 20px rgba(11, 92, 231, 0.18);
+}
+
+/* Secondary */
+.btn-ghost {
+  background: #ffffffcc;
+  border: 1px solid #e6eef8;
+  padding: 8px 12px;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+  background: #ffffff;
+  border-color: var(--navy-500);
+}
+
+/* ---------- Table ---------- */
+.table-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(13, 30, 45, 0.06);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.92rem;
+}
+
+thead th {
+  background: linear-gradient(90deg, var(--navy-700), var(--navy-600));
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 0.78rem;
+  padding: 14px 16px;
+  border-bottom: none;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f1f5f9;
+  color: var(--navy-900);
+}
+
+tbody tr {
+  transition: all 0.2s ease;
+}
+
+tbody tr:hover {
+  background: linear-gradient(
+    90deg,
+    rgba(14, 165, 233, 0.05),
+    rgba(14, 165, 233, 0.02)
+  );
+  box-shadow: 0 2px 8px rgba(14, 165, 233, 0.08);
+}
+
+.status-on {
+  background: rgba(16, 185, 129, 0.12);
+  color: #065f46;
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+.status-late {
+  background: rgba(245, 158, 11, 0.12);
+  color: #92400e;
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+.status-missed {
+  background: rgba(239, 68, 68, 0.12);
+  color: #991b1b;
+  padding: 6px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+/* ---------- Mobile Responsive Table ---------- */
+@media (max-width: 768px) {
+  /* Keep table structure but make it horizontally scrollable */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 800px; /* Ensure table has minimum width for all columns */
+    font-size: 0.8rem;
+  }
+
+  thead th {
+    padding: 10px 8px;
+    font-size: 0.7rem;
+  }
+
+  tbody td {
+    padding: 10px 8px;
+    font-size: 0.75rem;
+  }
+
+  /* Adjust status badges for mobile */
+  .status-on,
+  .status-late,
+  .status-missed {
+    padding: 4px 6px;
+    font-size: 0.7rem;
+  }
+
+  /* Add horizontal scroll indicator */
+  .table-wrap::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .table-wrap::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+  }
+
+  .table-wrap::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  .table-wrap::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+
+  /* Adjust main container padding for mobile */
+  main {
+    padding: 8px;
+  }
+
+  /* Make filter grid single column on mobile */
+  .filters-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+
+  /* Adjust date filter layout */
+  .date-filter-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .date-filter-container > div {
+    width: 100%;
+  }
+
+  /* Adjust filter section padding */
+  .filter-section {
+    padding: 16px;
+  }
+
+  /* Adjust button layout */
+  .filter-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .filter-buttons button {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Adjust header layout */
+  .header-inner {
+    padding: 0 12px;
+  }
+
+  /* Adjust logo size for mobile */
+  .header-inner img {
+    height: 32px;
+  }
+
+  /* QR Scanner section adjustments */
+  .qr-scanner-section {
+    padding: 16px !important;
+  }
+
+  .qr-scanner-section .flex {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .qr-scanner-section button {
+    width: 100%;
+  }
+}
+
+/* ---------- Tablet Responsive Adjustments ---------- */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Adjust filter grid for tablet */
+  .filters-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Make date filter full width on tablet */
+  .date-filter-container {
+    grid-column: 1 / -1;
+  }
+
+  /* Adjust table font size for tablet */
+  table {
+    font-size: 0.85rem;
+  }
+
+  thead th,
+  tbody td {
+    padding: 10px 12px;
+  }
+
+  /* Adjust main container padding for tablet */
+  main {
+    padding: 12px;
+  }
+}
+
+/* ---------- QR Scanner Modal ---------- */
+dialog {
+  border: none;
+  border-radius: 12px;
+  padding: 0;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e2e8f0;
+  background: var(--navy-700);
+  color: white;
+}
+
+.modal-head strong {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.modal-head .btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.modal-body {
+  padding: 20px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--navy-700);
+}
+
+.field input,
+.field select {
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-top: 8px;
+}
+
+.kbd {
+  border: 2px dashed #e2e8f0;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  background: #f8fafc;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  padding: 16px 20px;
+  border-top: 1px solid #e2e8f0;
+  background: #f8fafc;
+}
+
+.modal-actions .btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.modal-actions .btn.primary {
+  background: var(--navy-600);
+  color: white;
+  border: none;
+}
+
+/* Preview Card Styles */
+.preview-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e2e8f0;
+}
+
+.preview-card h4 {
+  margin: 0 0 12px 0;
+  color: var(--navy-700);
+  font-size: 1.1rem;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+
+.preview-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.preview-label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.preview-value {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--navy-900);
+}
+
+/* Camera Controls */
+.camera-controls {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.camera-controls button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.camera-controls button.primary {
+  background: var(--navy-600);
+  color: white;
+  border: none;
+}
+
+/* Scanner States */
+.scanner-active {
+  border: 2px solid var(--navy-500);
+}
+
+.scanner-success {
+  border: 2px solid var(--success);
+}
+
+/* Scan Frame */
+.scan-frame {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(11, 95, 206, 0.06);
+  background: linear-gradient(180deg, #fbfdff, #f6fbff);
+  min-height: 300px;
+  position: relative;
+}
+
+.scan-border {
+  position: absolute;
+  inset: 8px;
+  pointer-events: none;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 2px rgba(59, 130, 246, 0.1);
+}
+
+.scan-line {
+  height: 4px !important;
+  border-radius: 4px;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 165, 233, 0) 0%,
+    rgba(14, 165, 233, 1) 50%,
+    rgba(14, 165, 233, 0) 100%
+  );
+  animation: scanmove 2s linear infinite;
+}
+
+@keyframes scanmove {
+  0% {
+    top: 8%;
+  }
+  50% {
+    top: 72%;
+  }
+  100% {
+    top: 8%;
+  }
+}
+
+/* Collapsible Filter Section */
+.collapsible-section {
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 4px 12px rgba(13, 30, 45, 0.06);
+  border-radius: 12px;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--navy-700);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.collapsible-header:hover {
+  background: "#396a9b";
+}
+
+.collapsible-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.collapsible-content {
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.collapsible-content.open {
+  padding: 20px;
+  max-height: 500px;
+}
+
+.toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.toggle-icon.rotated {
+  transform: rotate(180deg);
+}
+
+/* QR Scanner Section */
+.qr-scanner-section {
+  color: #08314f;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 25px rgba(11, 60, 97, 0.15);
+}
+
+.qr-scanner-section h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.qr-scanner-section p {
+  margin: 0 0 16px 0;
+  opacity: 0.9;
+  font-size: 0.9rem;
+}
+
+/* small helper tweaks */
+.muted {
+  color: var(--muted);
+}
+.tiny {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* tighten footer */
+footer a {
+  color: var(--navy-600);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+footer a:hover {
+  color: var(--navy-700);
+}
+footer {
+  font-size: 0.82rem;
+  color: #6b7280;
+}
+
+/* remove big outer corner spacing by shrinking containers */
+.page-inner {
+  /* //padding: 8px; */
+}
+@keyframes pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-pop {
+  animation: pop 0.2s ease-out;
+}
+
+.animate-pop {
+  animation: pop 0.2s ease-out;
+}
+
+/* Responsive adjustments for modals */
+@media (max-width: 768px) {
+  dialog {
+    width: 95%;
+    margin: 10px;
+  }
+
+  .modal-body {
+    padding: 16px;
+    max-height: 60vh;
+  }
+
+  .preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scan-frame {
+    min-height: 250px;
+  }
+
+  .camera-controls {
+    flex-direction: column;
+  }
+
+  .camera-controls button {
+    width: 100%;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions .btn {
+    width: 100%;
+  }
+
+  .collapsible-header {
+    padding: 14px 16px;
+  }
+
+  .collapsible-content.open {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-head {
+    padding: 12px 16px;
+  }
+
+  .modal-body {
+    padding: 12px;
+  }
+
+  .modal-actions {
+    padding: 12px 16px;
+  }
+
+  table {
+    min-width: 900px; /* Slightly larger for very small screens */
+  }
+
+  .qr-scanner-section {
+    padding: 16px;
+  }
+}
